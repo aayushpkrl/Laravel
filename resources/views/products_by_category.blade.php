@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<div class='py-12'>
+    <div class='py-12'>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div clas="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 text-gray-900">
                 <div>
@@ -36,7 +36,7 @@
                                 <tbody>
                                     @foreach ($products as $product)
                                         <tr>
-                                            <td class="mx-6 my-3 whitespace-nowrap text-medium border-separate border-spacing-10 border border-gray-400 text-gray-700">{{ $product->id }}</td>
+                                            <td class="mx-6 my-3 whitespace-nowrap text-medium border-separate border-spacing-10 border border-gray-400 text-gray-700">{{ $loop->iteration }}</td>
                                             <td class="mx-6 my-3 whitespace-nowrap text-medium border-separate border-spacing-10 border border-gray-400 text-gray-700">
                                                 @if ($product->image)
                                                     <img src="{{ $product->image }}" alt="{{ $product->title }}" class="h-15 w-15 object-cover rounded-md">

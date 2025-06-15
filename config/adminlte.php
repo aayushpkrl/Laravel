@@ -300,18 +300,19 @@ return [
 
     'menu' => [
         // Navbar items:
-        // [
-        //     'type' => 'navbar-search',
-        //     'text' => 'search',
-        //     'topnav_right' => true,
-        // ],
         [
-            'type' => 'fullscreen-widget',
+            'type' => 'navbar-search',
+            'text' => 'search',
             'topnav_right' => true,
             'text' => 'Search products here...',
             'url' => 'search/products',
-            'method' => 'q',
+            'method' => 'GET',
+            'input_name' => 'q',
         ],
+        // [
+        //     'type' => 'fullscreen-widget',
+        //     'topnav_right' => true,
+        // ],
 
         // Sidebar items:
         [

@@ -6,8 +6,8 @@ use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SearchController;
 
 Route::get('/', function () {
-    return view('adminlte::page');
-});
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -21,5 +21,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/categories', [ProductCategoryController::class, 'showCategories'])->name('categories.index');
 Route::get('/products/category/{category}', [ProductCategoryController::class, 'showProductsByCategory'])->name('products.by_category');
+
+Route::get('/search/products', [SearchController::class, 'searchProducts'])->name('search.products');
 
 require __DIR__.'/auth.php';
